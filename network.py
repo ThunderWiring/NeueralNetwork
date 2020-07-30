@@ -1,5 +1,5 @@
 
-from data import xor_data, Batch, get_batch
+from data import Batch
 import numpy as np
 from layer import Layer, LayerType
 from typing import List
@@ -64,15 +64,3 @@ class Network:
         for l in range(1, len(self._layers)):
             self._layers[-l].update_knobs(delta_weights[l-1], delta_biase[l-1])
 
-
-network = Network(2, hidden_layers_sizes=[2, 2,1])
-
-for _ in range(15000):
-    network.train_batch(get_batch())
-
-
-print('======================================================================')
-print('[0,0]', network.calc(np.array([[0], [0]])))
-print('[0,1]', network.calc(np.array([[0], [1]])))
-print('[1,0]', network.calc(np.array([[1], [0]])))
-print('[1,1]', network.calc(np.array([[1], [1]])))
