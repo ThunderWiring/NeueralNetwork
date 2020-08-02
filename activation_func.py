@@ -29,5 +29,5 @@ class ReLu(ActivationFunc):
         return max(0, val)
 
     def derive(self, val):
-        #! the derivate is undefined at 0
+        #! the derivative is undefined at 0
         return 0 if val <= 0 else 1

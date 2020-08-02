@@ -29,5 +29,4 @@ def get_batch():
     return random input from data
     '''
     ind = np.random.randint(0, high=4)
-    # print(ind)
     return xor_data[ind]

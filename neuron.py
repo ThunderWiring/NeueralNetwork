@@ -7,11 +7,11 @@ class Neuron:
     def __init__(self, input_size: int, activiation_func: ActivationFunc):
         self._activation_func = activiation_func
         self._input_size = input_size
-        self._error = 0
         self._z = None
         self._a = None
 
         self.bias = 0
+        np.random.seed(1)
         self.weights = np.random.uniform(size=(1, input_size))
 
     def calc_output(self, inputs):
